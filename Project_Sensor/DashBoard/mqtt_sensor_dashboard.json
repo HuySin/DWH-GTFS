@@ -1,0 +1,2275 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 3,
+  "links": [],
+  "panels": [
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": -1,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "graph": false,
+              "legend": false,
+              "tooltip": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 3,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "graph": {},
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltipOptions": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "alias": "Model_1",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "MET",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"body.values.valueInt\") FROM \"MET\" WHERE (\"modelVersion\" = '1') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.values.valueInt"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "alias": "Model_2",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "MET",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"body.values.valueInt\") FROM \"MET\" WHERE (\"modelVersion\" = '2') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.values.valueInt"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "alias": "Model_3",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "MET",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"body.values.valueInt\") FROM \"MET\" WHERE (\"modelVersion\" = '3') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.values.valueInt"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "alias": "Model_4",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "MET",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"body.values.valueInt\") FROM \"MET\" WHERE (\"modelVersion\" = '4') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.values.valueInt"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "alias": "Model_5",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "MET",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"body.values.valueInt\") FROM \"MET\" WHERE (\"modelVersion\" = '5') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.values.valueInt"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Mean value of body.values.valueInt - MET",
+      "type": "timeseries"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "custom": {
+            "align": "center",
+            "displayMode": "color-text",
+            "filterable": true
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "id": 10,
+      "options": {
+        "frameIndex": 1,
+        "showHeader": true
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "alias": "Model1",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "MET",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.values.id\") as ID, first(\"body.values.metricCategory\") as metricCategory, first(\"body.values.metricSubcategory\") as metricSubcategory, first(\"body.values.unit\") as Unit, first(\"body.values.valueInt\") as Value_Model1 FROM \"MET\" WHERE (\"modelVersion\" = '1') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "Model1",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.values.id"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.metricCategory"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.metricSubcategory"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.unit"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.valueInt"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "MET",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.values.id\") as ID, first(\"body.values.metricCategory\") as metricCategory, first(\"body.values.metricSubcategory\") as metricSubcategory, first(\"body.values.unit\") as Unit, first(\"body.values.valueInt\") as Value_Model2 FROM \"MET\" WHERE (\"modelVersion\" = '2') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "Model2",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.values.id"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.metricCategory"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.metricSubcategory"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.unit"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.valueInt"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "MET",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.values.id\") as ID, first(\"body.values.metricCategory\") as metricCategory, first(\"body.values.metricSubcategory\") as metricSubcategory, first(\"body.values.unit\") as Unit, first(\"body.values.valueInt\") as Value_Model3 FROM \"MET\" WHERE (\"modelVersion\" = '3') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "Model3",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.values.id"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.metricCategory"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.metricSubcategory"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.unit"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.valueInt"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "MET",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.values.id\") as ID, first(\"body.values.metricCategory\") as metricCategory, first(\"body.values.metricSubcategory\") as metricSubcategory, first(\"body.values.unit\") as Unit, first(\"body.values.valueInt\") as Value_Model4 FROM \"MET\" WHERE (\"modelVersion\" = '4') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "Model4",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.values.id"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.metricCategory"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.metricSubcategory"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.unit"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.valueInt"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "MET",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.values.id\") as ID, first(\"body.values.metricCategory\") as metricCategory, first(\"body.values.metricSubcategory\") as metricSubcategory, first(\"body.values.unit\") as Unit, first(\"body.values.valueInt\") as Value_Model5 FROM \"MET\" WHERE (\"modelVersion\" = '5') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "Model5",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.values.id"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.metricCategory"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.metricSubcategory"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.unit"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.values.valueInt"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Detail of body - MET",
+      "transformations": [],
+      "type": "table"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "custom": {
+            "align": "center",
+            "displayMode": "color-text",
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Model_5_body.software.status"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": null
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 8,
+      "options": {
+        "frameIndex": 3,
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "SWR",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.software.imagePath\") as imagePath,first(\"body.software.name\") as SoftwareName ,first(\"body.software.startType\") as startType, first(\"body.software.status\") as Status,  first(\"body.software.type\") as SoftwareType_Model1 FROM \"SWR\" WHERE (\"modelVersion\" = '1') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.software.imagePath"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.name"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.startType"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.status"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.type"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "SWR",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.software.imagePath\") as imagePath,first(\"body.software.name\") as SoftwareName ,first(\"body.software.startType\") as startType, first(\"body.software.status\") as Status,  first(\"body.software.type\") as SoftwareType_Model2 FROM \"SWR\" WHERE (\"modelVersion\" = '2') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.software.imagePath"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.name"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.startType"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.status"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.type"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "SWR",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.software.imagePath\") as imagePath,first(\"body.software.name\") as SoftwareName ,first(\"body.software.startType\") as startType, first(\"body.software.status\") as Status,  first(\"body.software.type\") as SoftwareType_Model3 FROM \"SWR\" WHERE (\"modelVersion\" = '3') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "C",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.software.imagePath"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.name"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.startType"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.status"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.type"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "SWR",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.software.imagePath\") as imagePath,first(\"body.software.name\") as SoftwareName ,first(\"body.software.startType\") as startType, first(\"body.software.status\") as Status,  first(\"body.software.type\") as SoftwareType_Model4 FROM \"SWR\" WHERE (\"modelVersion\" = '4') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "D",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.software.imagePath"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.name"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.startType"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.status"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.type"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "SWR",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.software.imagePath\") as imagePath,first(\"body.software.name\") as SoftwareName ,first(\"body.software.startType\") as startType, first(\"body.software.status\") as Status,  first(\"body.software.type\") as SoftwareType_Model5 FROM \"SWR\" WHERE (\"modelVersion\" = '5') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "E",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.software.imagePath"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.name"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.startType"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.status"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.software.type"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "title": "Detail of body - SWR",
+      "type": "table"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "custom": {
+            "align": "center",
+            "displayMode": "color-text",
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "LOG_Message_Model_3_body.correlationid"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": null
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "id": 6,
+      "options": {
+        "frameIndex": 0,
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "alias": "LOG_Message_Model_1",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "LOG",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.application.applicationName\") as applicationName, first(\"body.application.computerName\") as computerName, first(\"body.label.resource\") as resource, first(\"body.severity\") as severity, first(\"body.message\")  as message_Model1 FROM \"LOG\" WHERE (\"modelVersion\" = '1') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.application.applicationName"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.application.computerName"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.label.resource"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.severity"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.message"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "alias": "LOG_Message_Model_1",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "LOG",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.application.applicationName\") as applicationName, first(\"body.application.computerName\") as computerName, first(\"body.label.resource\") as resource, first(\"body.severity\") as severity, first(\"body.message\")  as message_Model2 FROM \"LOG\" WHERE (\"modelVersion\" = '2') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.application.applicationName"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.application.computerName"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.label.resource"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.severity"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.message"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "alias": "LOG_Message_Model_1",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "LOG",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.application.applicationName\") as applicationName, first(\"body.application.computerName\") as computerName, first(\"body.label.resource\") as resource, first(\"body.severity\") as severity, first(\"body.message\")  as message_Model3 FROM \"LOG\" WHERE (\"modelVersion\" = '3') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "C",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.application.applicationName"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.application.computerName"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.label.resource"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.severity"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.message"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "alias": "LOG_Message_Model_1",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "LOG",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.application.applicationName\") as applicationName, first(\"body.application.computerName\") as computerName, first(\"body.label.resource\") as resource, first(\"body.severity\") as severity, first(\"body.message\")  as message_Model4 FROM \"LOG\" WHERE (\"modelVersion\" = '4') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "D",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.application.applicationName"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.application.computerName"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.label.resource"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.severity"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.message"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "alias": "LOG_Message_Model_1",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "LOG",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.application.applicationName\") as applicationName, first(\"body.application.computerName\") as computerName, first(\"body.label.resource\") as resource, first(\"body.severity\") as severity, first(\"body.message\")  as message_Model5 FROM \"LOG\" WHERE (\"modelVersion\" = '5') AND $timeFilter GROUP BY time($__interval) fill(none)",
+          "rawQuery": true,
+          "refId": "E",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.application.applicationName"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.application.computerName"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.label.resource"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.severity"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.message"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Detail of body - LOG",
+      "type": "table"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "custom": {
+            "align": "center",
+            "displayMode": "color-text",
+            "filterable": true
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "id": 4,
+      "options": {
+        "frameIndex": 1,
+        "showHeader": true
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "creator.applicationName"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "DES",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.configurationManifestInfo.nextAttemptUtc\") as nextAttemptUtc, first(\"body.configurationManifestInfo.version\") as configurationManifestInfo_version_Model1 FROM \"DES\" WHERE (\"modelVersion\" = '1') AND $timeFilter GROUP BY time($__interval),creator.applicationName, creator.computerName fill(none)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.configurationManifestInfo.nextAttemptUtc"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.configurationManifestInfo.version"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "creator.applicationName"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "DES",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.configurationManifestInfo.nextAttemptUtc\") as nextAttemptUtc, first(\"body.configurationManifestInfo.version\") as configurationManifestInfo_version_Model2 FROM \"DES\" WHERE (\"modelVersion\" = '2') AND $timeFilter GROUP BY time($__interval),creator.applicationName, creator.computerName fill(none)",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.configurationManifestInfo.nextAttemptUtc"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.configurationManifestInfo.version"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "creator.applicationName"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "DES",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.configurationManifestInfo.nextAttemptUtc\") as nextAttemptUtc, first(\"body.configurationManifestInfo.version\") as configurationManifestInfo_version_Model3 FROM \"DES\" WHERE (\"modelVersion\" = '3') AND $timeFilter GROUP BY time($__interval),creator.applicationName, creator.computerName fill(none)",
+          "rawQuery": true,
+          "refId": "C",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.configurationManifestInfo.nextAttemptUtc"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.configurationManifestInfo.version"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "creator.applicationName"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "DES",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.configurationManifestInfo.nextAttemptUtc\") as nextAttemptUtc, first(\"body.configurationManifestInfo.version\") as configurationManifestInfo_version_Model4 FROM \"DES\" WHERE (\"modelVersion\" = '4') AND $timeFilter GROUP BY time($__interval),creator.applicationName, creator.computerName fill(none)",
+          "rawQuery": true,
+          "refId": "D",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.configurationManifestInfo.nextAttemptUtc"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.configurationManifestInfo.version"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "creator.applicationName"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "DES",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT first(\"body.configurationManifestInfo.nextAttemptUtc\") as nextAttemptUtc, first(\"body.configurationManifestInfo.version\") as configurationManifestInfo_version_Model5 FROM \"DES\" WHERE (\"modelVersion\" = '5') AND $timeFilter GROUP BY time($__interval),creator.applicationName, creator.computerName fill(none)",
+          "rawQuery": true,
+          "refId": "E",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "body.configurationManifestInfo.nextAttemptUtc"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "body.configurationManifestInfo.version"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "modelVersion",
+              "operator": "=",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "title": "Detail of body - DES",
+      "type": "table"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 27,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "2021-05-28T13:10:00.000Z",
+    "to": "2021-05-28T16:30:00.000Z"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "MQTT_Sensor_Project2",
+  "uid": "v-Yx9qqMk",
+  "version": 8
+}
