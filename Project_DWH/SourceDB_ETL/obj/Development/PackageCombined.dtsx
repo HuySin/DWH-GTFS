@@ -1,0 +1,1835 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/4/2021 10:50:58 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="T-LINHNT87-CV"
+  DTS:CreatorName="FSOFT.FPT.VN\LinhNT87"
+  DTS:DTSID="{6D948191-59B4-4171-960D-763689494EE0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{0299A9E7-055D-49D4-B59F-768B406CC0B8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.Transit]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{76C8BAA5-5359-4DAE-8AEE-5F4572F8FD36}"
+      DTS:ObjectName="T-LINHNT87-CV\SQLEXPRESS.Transit">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=T-LINHNT87-CV\SQLEXPRESS;Initial Catalog=Transit;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitCombined]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9EF0EC50-3893-4049-A873-8C9A59372263}"
+      DTS:ObjectName="T-LINHNT87-CV\SQLEXPRESS.TransitCombined">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=T-LINHNT87-CV\SQLEXPRESS;Initial Catalog=TransitCombined;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitSchema]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{15C81F61-E100-4E48-B8DF-B61D02906078}"
+      DTS:ObjectName="T-LINHNT87-CV\SQLEXPRESS.TransitSchema">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=T-LINHNT87-CV\SQLEXPRESS;Initial Catalog=TransitSchema;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitSchemaCombined]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2EA3B83F-734B-46A2-B014-3C0F3098BBB1}"
+      DTS:ObjectName="T-LINHNT87-CV\SQLEXPRESS.TransitSchemaCombined">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=T-LINHNT87-CV\SQLEXPRESS;Initial Catalog=TransitSchemaCombined;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C0017724-AACA-44AD-B179-5E7EABBD3DDE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stop_times]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitSchemaCombined]"
+                  connectionManagerRefId="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitSchemaCombined]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[trip_id]"
+                      cachedDataType="nText"
+                      cachedName="trip_id"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[trip_id]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[trip_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[arrival_time]"
+                      cachedDataType="nText"
+                      cachedName="arrival_time"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[arrival_time]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_time]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[departure_time]"
+                      cachedDataType="nText"
+                      cachedName="departure_time"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[departure_time]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[departure_time]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[stop_id]"
+                      cachedDataType="nText"
+                      cachedName="stop_id"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[stop_id]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[stop_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[trip_id]"
+                      dataType="nText"
+                      name="trip_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[arrival_time]"
+                      dataType="nText"
+                      name="arrival_time" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[departure_time]"
+                      dataType="nText"
+                      name="departure_time" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[stop_id]"
+                      dataType="nText"
+                      name="stop_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stop_times]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitCombined]"
+                  connectionManagerRefId="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitCombined]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[trip_id]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[trip_id]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[trip_id]"
+                      name="trip_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_time]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[arrival_time]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_time]"
+                      name="arrival_time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[departure_time]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[departure_time]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[departure_time]"
+                      name="departure_time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[stop_id]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[stop_id]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[stop_id]"
+                      name="stop_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[trip_id]"
+                      dataType="nText"
+                      name="trip_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[arrival_time]"
+                      dataType="nText"
+                      name="arrival_time" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[departure_time]"
+                      dataType="nText"
+                      name="departure_time" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[stop_id]"
+                      dataType="nText"
+                      name="stop_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[stop_sequence]"
+                      dataType="wstr"
+                      length="50"
+                      name="stop_sequence" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[stop_headsign]"
+                      dataType="wstr"
+                      length="50"
+                      name="stop_headsign" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pickup_type]"
+                      dataType="wstr"
+                      length="50"
+                      name="pickup_type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[drop_off_type]"
+                      dataType="wstr"
+                      length="50"
+                      name="drop_off_type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[shape_dist_traveled]"
+                      dataType="r8"
+                      name="shape_dist_traveled" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[trip_id]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[trip_id]"
+                      name="trip_id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[arrival_time]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[arrival_time]"
+                      name="arrival_time" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[departure_time]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[departure_time]"
+                      name="departure_time" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[stop_id]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[stop_id]"
+                      name="stop_id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DTF - Operators"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{103d1d48-7865-4938-b58f-43262d21ae31}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DTF - Operators"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DTF - Operators\DST - CSV_Operators"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - CSV_Operators"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[operators]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DTF - Operators\DST - CSV_Operators.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitSchemaCombined]"
+                  connectionManagerRefId="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitSchemaCombined]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input].Columns[agency_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="agency_id"
+                      externalMetadataColumnId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input].ExternalColumns[operators]"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_id]" />
+                    <inputColumn
+                      refId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input].Columns[agency_name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="agency_name"
+                      externalMetadataColumnId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_name]" />
+                    <inputColumn
+                      refId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input].Columns[agency_url]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="agency_url"
+                      externalMetadataColumnId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input].ExternalColumns[website]"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_url]" />
+                    <inputColumn
+                      refId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input].Columns[agency_timezone]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="agency_timezone"
+                      externalMetadataColumnId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input].ExternalColumns[timezone]"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_timezone]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input].ExternalColumns[operators_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="operators_id" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input].ExternalColumns[operators]"
+                      dataType="wstr"
+                      length="50"
+                      name="operators" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="50"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input].ExternalColumns[website]"
+                      dataType="wstr"
+                      length="50"
+                      name="website" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input].ExternalColumns[timezone]"
+                      dataType="wstr"
+                      length="50"
+                      name="timezone" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DTF - Operators\DST - CSV_Operators.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DTF - Operators\DST - CSV_Operators.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Operators\DST - CSV_Operators.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DTF - Operators\DST - CSV_Operators.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Operators\DST - CSV_Operators.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DTF - Operators\SRC - TXT_Agency"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - TXT_Agency"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[agency]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DTF - Operators\SRC - TXT_Agency.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitCombined]"
+                  connectionManagerRefId="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitCombined]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].ExternalColumns[agency_id]"
+                      length="50"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_id]"
+                      name="agency_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].ExternalColumns[agency_name]"
+                      length="50"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_name]"
+                      name="agency_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_url]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].ExternalColumns[agency_url]"
+                      length="50"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_url]"
+                      name="agency_url"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_timezone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].ExternalColumns[agency_timezone]"
+                      length="50"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_timezone]"
+                      name="agency_timezone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_lang]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].ExternalColumns[agency_lang]"
+                      length="50"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[agency_lang]"
+                      name="agency_lang"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].ExternalColumns[agency_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="agency_id" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].ExternalColumns[agency_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="agency_name" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].ExternalColumns[agency_url]"
+                      dataType="wstr"
+                      length="50"
+                      name="agency_url" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].ExternalColumns[agency_timezone]"
+                      dataType="wstr"
+                      length="50"
+                      name="agency_timezone" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].ExternalColumns[agency_lang]"
+                      dataType="wstr"
+                      length="50"
+                      name="agency_lang" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[agency_id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[agency_id]"
+                      name="agency_id" />
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[agency_name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[agency_name]"
+                      name="agency_name" />
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[agency_url]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[agency_url]"
+                      name="agency_url" />
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[agency_timezone]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[agency_timezone]"
+                      name="agency_timezone" />
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[agency_lang]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[agency_lang]"
+                      name="agency_lang" />
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DTF - Operators.Paths[OLE DB Source Output]"
+              endId="Package\DTF - Operators\DST - CSV_Operators.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DTF - Operators\SRC - TXT_Agency.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DTF - Train_routes"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{c94cd07f-bf61-4980-a6f7-f9ef62292d46}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DTF - Train_routes"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DTF - Train_routes\DST - CSV_Train_Routes"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - CSV_Train_Routes"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[train_routes]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitSchemaCombined]"
+                  connectionManagerRefId="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitSchemaCombined]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].Columns[route_type]"
+                      cachedDataType="i4"
+                      cachedName="route_type"
+                      externalMetadataColumnId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].ExternalColumns[route_type]"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[route_type]" />
+                    <inputColumn
+                      refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].Columns[agency_id]"
+                      cachedDataType="i4"
+                      cachedName="agency_id"
+                      externalMetadataColumnId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].ExternalColumns[operator]"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[agency_id]" />
+                    <inputColumn
+                      refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].Columns[route_short_name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="route_short_name"
+                      externalMetadataColumnId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].ExternalColumns[route_code]"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[route_short_name]" />
+                    <inputColumn
+                      refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].Columns[route_long_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="route_long_name"
+                      externalMetadataColumnId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].ExternalColumns[route_name]"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[route_long_name]" />
+                    <inputColumn
+                      refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].Columns[route_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="route_id"
+                      externalMetadataColumnId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].ExternalColumns[route_id]"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[route_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].ExternalColumns[route_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="route_id" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].ExternalColumns[operator]"
+                      dataType="i4"
+                      name="operator" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].ExternalColumns[route_code]"
+                      dataType="wstr"
+                      length="50"
+                      name="route_code" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].ExternalColumns[route_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="route_name" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input].ExternalColumns[route_type]"
+                      dataType="i4"
+                      name="route_type" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DTF - Train_routes\SRC - TXT_Routes"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - TXT_Routes"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[routes]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DTF - Train_routes\SRC - TXT_Routes.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitCombined]"
+                  connectionManagerRefId="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitCombined]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[route_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].ExternalColumns[route_id]"
+                      length="50"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[route_id]"
+                      name="route_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[agency_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].ExternalColumns[agency_id]"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[agency_id]"
+                      name="agency_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[route_short_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].ExternalColumns[route_short_name]"
+                      length="50"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[route_short_name]"
+                      name="route_short_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[route_long_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].ExternalColumns[route_long_name]"
+                      length="255"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[route_long_name]"
+                      name="route_long_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[route_type]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].ExternalColumns[route_type]"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].Columns[route_type]"
+                      name="route_type"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].ExternalColumns[route_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="route_id" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].ExternalColumns[agency_id]"
+                      dataType="i4"
+                      name="agency_id" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].ExternalColumns[route_short_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="route_short_name" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].ExternalColumns[route_long_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="route_long_name" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output].ExternalColumns[route_type]"
+                      dataType="i4"
+                      name="route_type" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[route_id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[route_id]"
+                      name="route_id" />
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[agency_id]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[agency_id]"
+                      name="agency_id" />
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[route_short_name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[route_short_name]"
+                      name="route_short_name" />
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[route_long_name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[route_long_name]"
+                      name="route_long_name" />
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[route_type]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[route_type]"
+                      name="route_type" />
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DTF - Train_routes.Paths[OLE DB Source Output]"
+              endId="Package\DTF - Train_routes\DST - CSV_Train_Routes.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DTF - Train_routes\SRC - TXT_Routes.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DTF - Train_stations_fixes"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{81b1593a-0962-4bfc-8174-d4bcb1f2af18}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DTF - Train_stations_fixes"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - CSV_Train_stations_fixes"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[train_stations_fixes]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitSchemaCombined]"
+                  connectionManagerRefId="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitSchemaCombined]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input].Columns[stop_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="stop_id"
+                      externalMetadataColumnId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].Columns[stop_id]" />
+                    <inputColumn
+                      refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input].Columns[stop_lat]"
+                      cachedDataType="r8"
+                      cachedName="stop_lat"
+                      externalMetadataColumnId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].Columns[stop_lat]" />
+                    <inputColumn
+                      refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input].Columns[stop_lon]"
+                      cachedDataType="r8"
+                      cachedName="stop_lon"
+                      externalMetadataColumnId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input].ExternalColumns[lon]"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].Columns[stop_lon]" />
+                    <inputColumn
+                      refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input].Columns[stop_name]"
+                      cachedDataType="nText"
+                      cachedName="stop_name"
+                      externalMetadataColumnId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].Columns[stop_name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                      dataType="r8"
+                      name="lat" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input].ExternalColumns[lon]"
+                      dataType="r8"
+                      name="lon" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      dataType="nText"
+                      name="name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - TXT_Stops"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stops]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitCombined]"
+                  connectionManagerRefId="Package.ConnectionManagers[T-LINHNT87-CV\SQLEXPRESS.TransitCombined]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].Columns[stop_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].ExternalColumns[stop_id]"
+                      length="50"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].Columns[stop_id]"
+                      name="stop_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].Columns[stop_name]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].ExternalColumns[stop_name]"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].Columns[stop_name]"
+                      name="stop_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].Columns[stop_lat]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].ExternalColumns[stop_lat]"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].Columns[stop_lat]"
+                      name="stop_lat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].Columns[stop_lon]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].ExternalColumns[stop_lon]"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].Columns[stop_lon]"
+                      name="stop_lon"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].ExternalColumns[stop_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="stop_id" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].ExternalColumns[stop_name]"
+                      dataType="nText"
+                      name="stop_name" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].ExternalColumns[stop_lat]"
+                      dataType="r8"
+                      name="stop_lat" />
+                    <externalMetadataColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output].ExternalColumns[stop_lon]"
+                      dataType="r8"
+                      name="stop_lon" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Error Output].Columns[stop_id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Error Output].Columns[stop_id]"
+                      name="stop_id" />
+                    <outputColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Error Output].Columns[stop_name]"
+                      dataType="nText"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Error Output].Columns[stop_name]"
+                      name="stop_name" />
+                    <outputColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Error Output].Columns[stop_lat]"
+                      dataType="r8"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Error Output].Columns[stop_lat]"
+                      name="stop_lat" />
+                    <outputColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Error Output].Columns[stop_lon]"
+                      dataType="r8"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Error Output].Columns[stop_lon]"
+                      name="stop_lon" />
+                    <outputColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DTF - Train_stations_fixes.Paths[OLE DB Source Output]"
+              endId="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DTF - Train_stations_fixes\SRC - TXT_Stops.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="159,42"
+          Id="Package\DTF - Operators"
+          TopLeft="283,97" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\DTF - Train_routes"
+          TopLeft="495,97" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\DTF - Train_stations_fixes"
+          TopLeft="721,96" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task"
+          TopLeft="324,262" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DTF - Operators">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DTF - Operators\DST - CSV_Operators"
+          TopLeft="138,260" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\DTF - Operators\SRC - TXT_Agency"
+          TopLeft="44,90" />
+        <EdgeLayout
+          Id="Package\DTF - Operators.Paths[OLE DB Source Output]"
+          TopLeft="131.5,132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.5,128"
+              Start="0,0"
+              End="100.5,120.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,60"
+                    Point2="0,64"
+                    Point3="4,64" />
+                  <mssgle:LineSegment
+                    End="96.5,64" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.5,64"
+                    Point2="100.5,64"
+                    Point3="100.5,68" />
+                  <mssgle:LineSegment
+                    End="100.5,120.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DTF - Operators\DST - CSV_Operators">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DTF - Operators\SRC - TXT_Agency">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DTF - Train_routes">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="205,42"
+          Id="Package\DTF - Train_routes\DST - CSV_Train_Routes"
+          TopLeft="138,260" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\DTF - Train_routes\SRC - TXT_Routes"
+          TopLeft="353,91" />
+        <EdgeLayout
+          Id="Package\DTF - Train_routes.Paths[OLE DB Source Output]"
+          TopLeft="439.5,133">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-199,127"
+              Start="0,0"
+              End="-199,119.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59.5"
+                    Point2="0,63.5"
+                    Point3="-4,63.5" />
+                  <mssgle:LineSegment
+                    End="-195,63.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-195,63.5"
+                    Point2="-199,63.5"
+                    Point3="-199,67.5" />
+                  <mssgle:LineSegment
+                    End="-199,119.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DTF - Train_routes\DST - CSV_Train_Routes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DTF - Train_stations_fixes">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="237,42"
+          Id="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes"
+          TopLeft="138,260" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\DTF - Train_stations_fixes\SRC - TXT_Stops"
+          TopLeft="108,91" />
+        <EdgeLayout
+          Id="Package\DTF - Train_stations_fixes.Paths[OLE DB Source Output]"
+          TopLeft="191.5,133">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65,127"
+              Start="0,0"
+              End="65,119.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59.5"
+                    Point2="0,63.5"
+                    Point3="4,63.5" />
+                  <mssgle:LineSegment
+                    End="61,63.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61,63.5"
+                    Point2="65,63.5"
+                    Point3="65,67.5" />
+                  <mssgle:LineSegment
+                    End="65,119.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DTF - Train_stations_fixes\DST - CSV_Train_stations_fixes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DTF - Train_stations_fixes\SRC - TXT_Stops">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DTF - Train_routes\SRC - TXT_Routes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="328,134" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="320.5,260.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="407.75,176">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84.5"
+              Start="0,0"
+              End="0,77">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
